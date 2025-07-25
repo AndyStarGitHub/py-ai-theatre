@@ -96,6 +96,22 @@ updated_tools = [
             }
         }
     },
+
+    {
+        "type": "function",
+        "function": {
+            "name": "get_event_details_by_title",
+            "description": "Get full details (date, author, actors) of a play by title",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                },
+                "required": ["title"]
+            }
+        }
+    }
+
 ]
 
 response = openai.beta.assistants.update(
