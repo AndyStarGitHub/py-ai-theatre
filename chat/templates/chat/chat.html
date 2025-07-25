@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load tz %}
+
+{% block content %}
+<div class="card p-4 shadow">
+    <h2 class="mb-3">Chat with Smart Assistant</h2>
+
+    <form method="post" action="{% url 'clear_history' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-warning">Cleat the chat history</button>
+    </form>
+
+    <div id="chat-box" class="border p-3 mb-3" style="height: 300px; overflow-y: scroll;">
+        {% for message in messages %}
+            <p>
+                <strong>{{ message.role|capfirst }}:</strong>
+                {{ message.content }}<br>
+                <small class="text-muted">{{ message.created_at|localtime|date:"H:i:s" }}</small>
+            </p>
+        {% empty %}
+            <p class="text-muted">No messages found so far...</p>
+        {% endfor %}
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" name="message" class="form-control" placeholder="Please type your message here..." required>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
