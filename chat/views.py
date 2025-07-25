@@ -27,7 +27,7 @@ def chat_view(request: HttpRequest) -> HttpResponse:
                 {"role": m.role, "content": m.content}
                 for m in history
             ]
-
+            messages_for_ai = messages_for_ai[-32: ]
             ai_reply = call_ai_agent(messages_for_ai, user.id)
 
             Message.objects.create(

@@ -5,7 +5,7 @@ from .tools import (
     get_upcoming_events,
     book_ticket,
     get_user_bookings,
-    cancel_booking, get_event_details, cancel_booking_by_event_and_seat,
+    cancel_booking, get_event_details, cancel_booking_by_event_and_seat, get_event_author,
 )
 
 openai.api_key = settings.OPENAI_API_KEY
@@ -17,6 +17,7 @@ FUNCTION_MAP = {
     "cancel_booking": cancel_booking,
     "get_event_details": get_event_details,
     "cancel_booking_by_event_and_seat": cancel_booking_by_event_and_seat,
+    "get_event_author": get_event_author,
 }
 
 
