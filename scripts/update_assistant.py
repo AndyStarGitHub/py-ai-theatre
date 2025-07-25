@@ -81,8 +81,21 @@ updated_tools = [
                 "required": ["event_title", "seat"]
             },
         },
-    }
-
+    },
+    {
+        "type": "function",
+        "function": {
+            "name": "get_event_author",
+            "description": "Get author of the play by title",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "title": {"type": "string"},
+                },
+                "required": ["title"]
+            }
+        }
+    },
 ]
 
 response = openai.beta.assistants.update(
