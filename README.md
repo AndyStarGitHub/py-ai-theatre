@@ -1,23 +1,25 @@
 # py-ai-theatre
-Employer testing task. Website for theatre tickets reservation using AI chat.
+Employer testing task: AI-powered ticket reservation system for theatre 
+via chat interface.
 
 
 ## General information 
 
 The purpose of the project is to create back end of the website where authorised
 users can reserve tickets to visit the theatre but through the communication
-with the AI agent (Smart Assistant, of SA) from the theatre side. The examples of sentences 
-that SA understand provided lower. Any user can register at the site and after the 
-registration (s)he can open the chat page. User can create request to SA and
-get responses. User can see only own chat and receive information on own
-booking. User can cancel his own booking. While booking SA validates if the seat
-number is correct and checks if it is not booked yet. User can browse history of his
+with the AI agent (Smart Assistant, of SA) from the theatre side. The examples 
+of sentences that the Smart Assistant (SA) understands are listed below. Any 
+user can register at the site and after the registration (s)he can open the 
+chat page. User can create request to SA and get responses. User can see 
+only own chat and receive information on own booking. User can cancel his 
+own booking. While booking SA validates if the seat number is correct and 
+checks if it is not booked yet. User can browse history of his
 own chat and can clear the history.
 Only users with admin authorisation can create events. In the case you need to
 create a superuser please use common Python approach.
 SA uses the information from the database, not from tha chat history.
-The seat numbers use format XX-Y where XX is a row (1 - 20), and Y the number
-of seat in the row (A - Q), e.g. 17-F, 5-H.
+Seat numbers follow the format XX-Y, where XX is the row number (1–20), 
+and Y is the seat letter (A–Q), e.g., 17-F, 5-H
 
 
 ## Installation
@@ -28,7 +30,7 @@ of seat in the row (A - Q), e.g. 17-F, 5-H.
 
 ```shell
 git clone https://github.com/AndyStarGitHub/py-ai-theatre/
-cd py-stadium
+cd py-ai-theatre
 python -m venv venv
 venv\Scripts\activate (on Windows)
 source venv/bin/activate (on macOS)
@@ -43,6 +45,10 @@ python manage.py runserver
 
 
 ## Additional software requirements
+
+The dependencies are listed in requirements.txt. 
+Here's a snapshot:
+
 annotated-types==0.7.0
 anyio==4.9.0
 asgiref==3.9.1
@@ -90,14 +96,29 @@ tzdata==2025.2
 
 ## Demo
 
-The project can be cloned from https://github.com/AndyStarGitHub/py-stadium.
+1. The project can be cloned from https://github.com/AndyStarGitHub/py-ai-theatre.
 
-Training database has been populated with faked data. 
+2. All migrations shall be completed:
+```shell
+python manage.py makemigrations
+python manage.py migrate
+```
 
-To login as a superuser with the credentials:
-    Login: super@stadium.mate
-    Password: ueur!!77eeen
+3. For your convenience you can load some fake events:
 
+```shell
+python manage.py loaddata events.json
+```
+4. If you have no AI agent installed yet, then probably you will have
+to run the following:
+
+```shell
+python scripts/create_assistant.py
+  
+* You will get Assistand ID, please copy it to .env.
+
+python scripts/update_assistant.py
+```
 
 ## Run with Docker
 
