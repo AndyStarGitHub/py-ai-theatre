@@ -19,7 +19,8 @@ FUNCTION_MAP = {
     "cancel_booking_by_event_and_seat": cancel_booking_by_event_and_seat,
 }
 
-def call_ai_agent(messages, user_id):
+
+def call_ai_agent(messages: str, user_id: int) -> str:
     thread = openai.beta.threads.create(messages=messages)
 
     run = openai.beta.threads.runs.create(
@@ -62,7 +63,10 @@ def call_ai_agent(messages, user_id):
         )
 
         while run.status != "completed":
-            run = openai.beta.threads.runs.retrieve(run.id, thread_id=thread.id)
+            run = openai.beta.threads.runs.retrieve(
+                run.id,
+                thread_id=thread.id
+            )
 
     result = openai.beta.threads.messages.list(thread_id=thread.id)
     latest = result.data[0].content[0].text.value

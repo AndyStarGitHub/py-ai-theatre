@@ -67,21 +67,21 @@ updated_tools = [
             },
         },
     },
-{
-    "type": "function",
-    "function": {
-        "name": "cancel_booking_by_event_and_seat",
-        "description": "Cancel booking by event title and seat",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "event_title": {"type": "string"},
-                "seat": {"type": "string"},
+    {
+        "type": "function",
+        "function": {
+            "name": "cancel_booking_by_event_and_seat",
+            "description": "Cancel booking by event title and seat",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "event_title": {"type": "string"},
+                    "seat": {"type": "string"},
+                },
+                "required": ["event_title", "seat"]
             },
-            "required": ["event_title", "seat"]
         },
-    },
-}
+    }
 
 ]
 

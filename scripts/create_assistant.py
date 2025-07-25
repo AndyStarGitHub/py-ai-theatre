@@ -6,7 +6,8 @@ load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 SYSTEM_PROMPT = """
-You are a theatre AI assistant. Help users view upcoming shows, book seats, see and cancel bookings. 
+You are a theatre AI assistant. Help users view upcoming
+shows, book seats, see and cancel bookings.
 Only use tools provided. Do not make up anything.
 """
 
