@@ -1,6 +1,7 @@
 from django.core.exceptions import ValidationError
 from constants import VALID_ROWS, VALID_SEATS
 
+
 def is_valid_seat_code(seat_code: str) -> bool:
     try:
         row_str, seat_letter = seat_code.split('-')
@@ -9,6 +10,9 @@ def is_valid_seat_code(seat_code: str) -> bool:
     except (ValueError, AttributeError):
         return False
 
-def validate_seat_format(value):
+
+def validate_seat_format(value: str) -> bool:
     if not is_valid_seat_code(value):
-        raise ValidationError("Seat format should be XX-Y, where XX (row) = 1–20, Y (seat in a row) = A–Q")
+        raise ValidationError("Seat format should be XX-Y, "
+                              "where XX (row) = 1–20, Y "
+                              "(seat in a row) = A–Q")

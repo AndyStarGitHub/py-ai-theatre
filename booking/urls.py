@@ -2,5 +2,5 @@ from django.urls import path
 from django.http import HttpResponse
 
 urlpatterns = [
-    path('', lambda request: HttpResponse("Booking home")),
+    path("", lambda request: HttpResponse("Booking home")),
 ]
