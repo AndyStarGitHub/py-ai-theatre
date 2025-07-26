@@ -105,7 +105,6 @@ tzdata==2025.2
     - Book seat 11-N for Macbeth
     - Show all my bookings
     - Cancel seat 11-N for Macbeth
-6. Sample screenshot of the active chat: [img.png]. 
 
 
 ## Demo (non-Docker)
