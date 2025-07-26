@@ -12,7 +12,8 @@ of sentences that the Smart Assistant (SA) understands are shown below. Any
 user can register at the site and after the registration (s)he can open the 
 chat page. 
 Users can:
-- create request to SA and get responses. 
+- create request to SA and get responses
+- ask SA to book seat (or several seats at once, even for different events)
 - see only own chat
 - get information on own bookings
 - can cancel his own booking
@@ -105,6 +106,9 @@ Here's a snapshot:
     - Book seat 11-N for Macbeth
     - Show all my bookings
     - Cancel seat 11-N for Macbeth
+    - Book four seats for King Lear: 5-C, 5-D, 5-E, 5-F
+    - Book four seats for Faust: 5-C, 5-D, 5-E, 5-F and two seats 
+   for Caligula: 1-F, 1-G
 
 
 ## Demo (non-Docker)
