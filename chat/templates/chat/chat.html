@@ -22,6 +22,15 @@
         {% endfor %}
     </div>
 
+    <script>
+      window.addEventListener("load", function () {
+        const chatBox = document.getElementById("chat-box");
+        if (chatBox) {
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }
+      });
+    </script>
+
     <form method="post">
         {% csrf_token %}
         <div class="input-group">
