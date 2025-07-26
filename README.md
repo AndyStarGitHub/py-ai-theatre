@@ -62,10 +62,10 @@ docker-compose exec web python manage.py loaddata events.json
 The dependencies are listed in requirements.txt. 
 Here's a snapshot:
 
-annotated-types==0.7.0
-anyio==4.9.0
-asgiref==3.9.1
-certifi==2025.7.14
+* annotated-types==0.7.0
+* anyio==4.9.0
+* asgiref==3.9.1
+* certifi==2025.7.14
 colorama==0.4.6
 crispy-bootstrap5==2025.6
 distro==1.9.0
